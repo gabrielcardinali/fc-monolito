@@ -5,6 +5,8 @@ import { up as up02, down as down02 } from "./02-create-store-catalog-products.m
 import { up as up03, down as down03 } from "./03-create-clients.migration";
 import { up as up04, down as down04 } from "./04-create-transactions.migration";
 import { up as up05, down as down05 } from "./05-create-invoices.migration";
+import { up as up06, down as down06 } from "./06-create-orders.migration";
+import { up as up07, down as down07 } from "./07-create-order-items.migration";
 
 export const migrator = (sequelize: Sequelize) => {
   return new Umzug({
@@ -14,6 +16,8 @@ export const migrator = (sequelize: Sequelize) => {
       { name: "03-create-clients", up: up03, down: down03 },
       { name: "04-create-transactions", up: up04, down: down04 },
       { name: "05-create-invoices", up: up05, down: down05 },
+      { name: "06-create-orders", up: up06, down: down06 },
+      { name: "07-create-order-items", up: up07, down: down07 },
     ],
     context: sequelize.getQueryInterface(),
     storage: new SequelizeStorage({ sequelize }),
